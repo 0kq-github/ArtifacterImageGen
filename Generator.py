@@ -461,7 +461,7 @@ class CynoGenerator:
                 continue
             atftype.append(details['type'])
             PreviewPaste = Image.new('RGBA',Base.size,(255,255,255,0))
-            Preview = Image.open(details["filename"]).resize((256,256))
+            Preview = Image.open(details["filename"]).convert("RGBA").resize((256,256))
             enhancer = ImageEnhance.Brightness(Preview)
             Preview = enhancer.enhance(0.6)
             Preview= Preview.resize((int(Preview.width*1.3),int(Preview.height*1.3)))
